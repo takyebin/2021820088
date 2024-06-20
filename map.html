@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="map.css"/>
+    <title>what is pseudo</title>
+    <style>
+        #map {
+            height: 600px; 
+            width: 1000px;   
+        }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <header class="header">
+        <a href="index.html" target="_self">
+          <img src="img/logo.png" alt="Logo" class="logo"> </a>
+      <div class="red-line"></div>
+          <div class="menu">
+              <div class="menu-item">
+                <a href="list.html" target="_self">
+                    <img src="img/header_menu.png" alt="Menu 2">
+                </a>
+                <p>사건</p> 
+            </div>
+            <div class="menu-item">
+                <a href="profile.html" target="_self">
+                    <img src="img/header_menu.png" alt="Menu 3">
+                </a>
+                <p>프로필</p>
+            </div>
+            <div class="menu-item">
+                <a href="map.html" target="_self">
+                    <img src="img/header_menu.png" alt="Menu 4">
+                </a>
+                <p>지도</p>
+            </div>
+          </div>
+      </header>
+
+    
+
+    <main>
+      <div class="content">
+        <div class="title">
+          <h1>📂 사이비 지도</h1>
+          <div class="introduction-text">
+            ≫ 도쟁이가 주로 출몰하는 지역과 주요 교회의 위치를 알아보자.
+          </div>
+        </div>
+      <hr />
+    </main>
+
+    <h1>Leaflet Map Example</h1>
+    <div id="map-container">
+      <div id="map"></div>
+  </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // 지도 객체 생성 및 초기화
+        var map = L.map('map').setView([37.5665, 126.9780], 12); // 서울의 위도와 경도, 줌 레벨 설정
+
+        // OSM 타일 레이어 추가
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        
+        L.marker([37.428466, 127.000982]).addTo(map)
+            .bindPopup('신천지 총회본부')
+            .openPopup();
+
+        L.marker([35.1830368,126.9079239]).addTo(map)
+            .bindPopup('신천지 베드로지파 광주교회')
+            .openPopup();
+
+        L.marker([35.1040632,128.9572431]).addTo(map)
+            .bindPopup('신천지 부산야고보지파 부산교회')
+            .openPopup();
+            
+        L.marker([35.13201515,129.03597809]).addTo(map)
+          .bindPopup('신천지 안드레지파 안드레교회')
+          .openPopup();
+
+        L.marker([35.8397587,128.566548]).addTo(map)
+          .bindPopup('신천지 다대오지파 대구교회')
+          .openPopup();
+
+        L.marker([37.3639296,127.9395805]).addTo(map)
+          .bindPopup('신천지 빌립지파 원주교회')
+          .openPopup();
+
+        L.marker([37.49196655,126.9934493]).addTo(map)
+          .bindPopup('신천지 바돌로매지파 영등포교회')
+          .openPopup();
+
+        L.marker([37.4912592,126.7044518]).addTo(map)
+          .bindPopup('신천지 마태지파 인천교회')
+          .openPopup();
+
+        L.marker([36.337945,127.3950984]).addTo(map)
+          .bindPopup('신천지 맛디아지파 대전교회')
+          .openPopup();
+
+        L.marker([37.646721,127.0625701]).addTo(map)
+          .bindPopup('신천지 서울야고보지파 서울교회')
+          .openPopup();
+
+        L.marker([35.85473875,127.09602835]).addTo(map)
+          .bindPopup('신천지 도마지파 전주교회')
+          .openPopup();
+
+          //통일교//
+        L.marker([37.6838325,127.5465183]).addTo(map)
+          .bindPopup('통일교 소재지')
+          .openPopup();
+
+          //구원파//
+        L.marker([37.027496,127.3419883]).addTo(map)
+          .bindPopup('기독교복음침례회의 수련원 시설')
+          .openPopup();
+
+        L.marker([37.39763797,126.97825422]).addTo(map)
+          .bindPopup('대한예수교침례회 서울중앙교회')
+          .openPopup();
+
+        L.marker([37.60512605,127.03841225]).addTo(map)
+          .bindPopup('대한예수교침례회 서울강북교회')
+          .openPopup();
+
+        L.marker([37.5515309,127.0758279]).addTo(map)
+          .bindPopup('대한예수교침례회 서울광진교회')
+          .openPopup();
+
+        L.marker([37.6492554,127.0864662]).addTo(map)
+          .bindPopup('대한예수교침례회 서울노원교회')
+          .openPopup();
+
+        L.marker([37.6546519,127.03783191]).addTo(map)
+          .bindPopup('대한예수교침례회 서울도봉교회')
+          .openPopup();
+
+        L.marker([37.6579356,127.0620399]).addTo(map)
+          .bindPopup('대한예수교침례회 서울동대문교회')
+          .openPopup();
+
+        L.marker([37.54018431,127.16960729]).addTo(map)
+          .bindPopup('대한예수교침례회 서울동부교회')
+          .openPopup();
+
+        L.marker([37.5643163,126.9337604]).addTo(map)
+          .bindPopup('대한예수교침례회 서울서부교회')
+          .openPopup();
+
+        L.marker([37.50683897,127.10487913]).addTo(map)
+          .bindPopup('대한예수교침례회 서울송파교회')
+          .openPopup();
+
+        L.marker([37.5126325,126.8380718]).addTo(map)
+          .bindPopup('대한예수교침례회 서울양천교회')
+          .openPopup();
+
+        L.marker([37.6227693,126.8890107]).addTo(map)
+          .bindPopup('대한예수교침례회 서울릉펼교회')
+          .openPopup();
+         
+        L.marker([37.53337478,127.11829]).addTo(map)
+          .bindPopup('대한예수교침례회 서울잠실교회')
+          .openPopup();
+
+        L.marker([37.6064167,127.0947052]).addTo(map)
+          .bindPopup('대한예수교침례회 서울중랑교회')
+          .openPopup();
+
+        L.marker([37.56580145,127.03051561]).addTo(map)
+          .bindPopup('대한예수교침례회 서울중부교회')
+          .openPopup();
+
+        L.marker([37.3976381,126.9782541]).addTo(map)
+          .bindPopup('대한예수교침례회 서울중앙교회')
+          .openPopup();
+
+        L.marker([37.7434399,128.911626]).addTo(map)
+          .bindPopup('대한예수교침례회 강릉교회')
+          .openPopup();
+
+        L.marker([38.3677477,128.4743429]).addTo(map)
+          .bindPopup('대한예수교침례회 고성교회')
+          .openPopup();
+
+        L.marker([37.4806308,129.1072373]).addTo(map)
+          .bindPopup('대한예수교침례회 동해교회')
+          .openPopup();
+
+        L.marker([38.1878879,128.5758711]).addTo(map)
+          .bindPopup('대한예수교침례회 속초교회')
+          .openPopup();
+
+        L.marker([38.09903,127.9843118]).addTo(map)
+          .bindPopup('대한예수교침례회 양구교회')
+          .openPopup();
+
+        L.marker([38.07092926,128.61033089]).addTo(map)
+          .bindPopup('대한예수교침례회 양양교회')
+          .openPopup();
+
+        L.marker([37.34425094,127.92295853]).addTo(map)
+          .bindPopup('대한예수교침례회 원주교회')
+          .openPopup();
+
+        L.marker([37.30440244,127.81475277]).addTo(map)
+          .bindPopup('대한예수교침례회 원주서부교회')
+          .openPopup();
+
+        L.marker([38.06670029,128.175355]).addTo(map)
+          .bindPopup('대한예수교침례회 인제교회')
+          .openPopup();
+
+        L.marker([37.3714013,128.6728832]).addTo(map)
+          .bindPopup('대한예수교침례회 정선교회')
+          .openPopup();
+
+        L.marker([38.1451924,127.3035134]).addTo(map)
+          .bindPopup('대한예수교침례회 철원교회')
+          .openPopup();
+
+        L.marker([37.8440649,127.7671206]).addTo(map)
+          .bindPopup('대한예수교침례회 춘천교회')
+          .openPopup();
+
+        L.marker([37.1528521,128.98993919]).addTo(map)
+          .bindPopup('대한예수교침례회 태백교회')
+          .openPopup();
+
+        L.marker([37.3684161,128.3930801]).addTo(map)
+          .bindPopup('대한예수교침례회 평창교회')
+          .openPopup();
+
+        L.marker([37.6982833,127.8838635]).addTo(map)
+          .bindPopup('대한예수교침례회 홍천교회')
+          .openPopup();
+
+        L.marker([38.1583741,127.65128566]).addTo(map)
+          .bindPopup('대한예수교침례회 화천교회')
+          .openPopup();
+
+        L.marker([37.49286541,127.9806303]).addTo(map)
+          .bindPopup('대한예수교침례회 횡성교회')
+          .openPopup();
+
+        L.marker([37.1426514,128.1997818]).addTo(map)
+          .bindPopup('제천 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.72260959,127.53238282,959]).addTo(map)
+          .bindPopup('청원 내수 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.7857729,126.4597604]).addTo(map)
+          .bindPopup('서산 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.9803961,127.9422802]).addTo(map)
+          .bindPopup('충주 교현 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.63618395,127.42821138]).addTo(map)
+          .bindPopup('청주 복대 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.2040113,127.0868531]).addTo(map)
+          .bindPopup('논산 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.3518788,126.60691683]).addTo(map)
+          .bindPopup('보령 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.60589847,126.65222789]).addTo(map)
+          .bindPopup('보성 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.7692576,127.0461653]).addTo(map)
+          .bindPopup('아산 배방 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.46514991,127.12119795]).addTo(map)
+          .bindPopup('공주 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.87982059,127.16108295]).addTo(map)
+          .bindPopup('천안 직산 하나님의 교회')
+          .openPopup();
+
+
+        L.marker([36.62722433,127.42443617]).addTo(map)
+          .bindPopup('청주 흥덕 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.63646404,127.45913449]).addTo(map)
+          .bindPopup('청주 서원 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.1326945,128.220522]).addTo(map)
+          .bindPopup('제천 동현 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.9692565,126.40831001]).addTo(map)
+          .bindPopup('서산 대산 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.76513504,126.87408824]).addTo(map)
+          .bindPopup('세종 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.46482436,126.63536572]).addTo(map)
+          .bindPopup('인천 낙섬 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.59852023,126.70140421]).addTo(map)
+          .bindPopup('인천 검단 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.49409625,126.74137905]).addTo(map)
+          .bindPopup('인천 부개 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.51558163,126.70609406]).addTo(map)
+          .bindPopup('인천 청천 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.40951424,126.72392628]).addTo(map)
+          .bindPopup('인천 논현 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.4161221,126.69088965]).addTo(map)
+          .bindPopup('인천 연수 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.54459817,126.68277889]).addTo(map)
+          .bindPopup('인천 심곡 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.44497178,126.74037567]).addTo(map)
+          .bindPopup('인천 만수 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.4634968,126.6997375]).addTo(map)
+          .bindPopup('인천 간석 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.54776608,126.73036305]).addTo(map)
+          .bindPopup('인천 계양 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.43868616,126.67542218]).addTo(map)
+          .bindPopup('인천 남구 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.52336351,127.2349294]).addTo(map)
+          .bindPopup('강릉 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.83794157,127.70403312]).addTo(map)
+          .bindPopup('춘천 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.35631981,127.94375826]).addTo(map)
+          .bindPopup('원주 하나님의 교회')
+          .openPopup();
+
+        L.marker([38.18772612,128.60004398]).addTo(map)
+          .bindPopup('속초 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.53586333,129.10570723]).addTo(map)
+          .bindPopup('동해 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.16671363,128.98972592]).addTo(map)
+          .bindPopup('태백 하나님의 교회')
+          .openPopup();
+
+        L.marker([38.21162108,127.22434884]).addTo(map)
+          .bindPopup('철원 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.3451787,127.9521325]).addTo(map)
+          .bindPopup('원주 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.37037533,127.38207542]).addTo(map)
+          .bindPopup('대전 서구 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.3067745,127.36398268]).addTo(map)
+          .bindPopup('대전 정림 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.37774863,127.42866404]).addTo(map)
+          .bindPopup('대전 회덕 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.3496335,127.442579]).addTo(map)
+          .bindPopup('대전 동구 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.2905911,127.4615893]).addTo(map)
+          .bindPopup('대전 산내 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.3401263,127.406014]).addTo(map)
+          .bindPopup('대전 중촌 하나님의 교회')
+          .openPopup();
+
+        L.marker([34.95542173,127.52569639]).addTo(map)
+          .bindPopup('순천 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.55818209,126.85696142]).addTo(map)
+          .bindPopup('정읍 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.02241514,126.71419501]).addTo(map)
+          .bindPopup('나주 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.9342772,126.95411053]).addTo(map)
+          .bindPopup('익산 하나님의 교회')
+          .openPopup();
+
+        L.marker([34.97898268,127.58032325]).addTo(map)
+          .bindPopup('광양 하나님의 교회')
+          .openPopup();
+
+        L.marker([34.76885295,127.0809462]).addTo(map)
+          .bindPopup('보성 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.95644189,126.98492191]).addTo(map)
+          .bindPopup('익산 어양 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.80769449,126.89234734]).addTo(map)
+          .bindPopup('김제 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.82702189,127.1201389]).addTo(map)
+          .bindPopup('전주 서신 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.8830269,127.1432873]).addTo(map)
+          .bindPopup('전주 호성 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.14373225,126.90227021]).addTo(map)
+          .bindPopup('광주 남구 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.1139315,128.3579594]).addTo(map)
+          .bindPopup('구미 하나님의 교회')
+          .openPopup();
+          
+        L.marker([35.1979316,128.565909]).addTo(map)
+          .bindPopup('마산 하나님의 교회')
+          .openPopup();
+
+        L.marker([34.89717443,128.62767938]).addTo(map)
+          .bindPopup('거제 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.2311577,128.8540582]).addTo(map)
+          .bindPopup('김해 방림 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.4235618,128.1628149]).addTo(map)
+          .bindPopup('상주 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.0804431,128.0888694]).addTo(map)
+          .bindPopup('사천 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.33760963,129.03817879]).addTo(map)
+          .bindPopup('경남 양산 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.82440238,128.73944206]).addTo(map)
+          .bindPopup('경남 경산 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.55163757,128.73547592]).addTo(map)
+          .bindPopup('안동 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.13841072,128.32347042]).addTo(map)
+          .bindPopup('구미 도량 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.04642831,129.37077354]).addTo(map)
+          .bindPopup('포항 중앙 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.6749475,127.9108326]).addTo(map)
+          .bindPopup('거창 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.2439644,128.8680171]).addTo(map)
+          .bindPopup('김해 내동 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.8654614,129.2190936]).addTo(map)
+          .bindPopup('경주 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.08796745,128.2570037]).addTo(map)
+          .bindPopup('김천 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.89466131,129.22662997]).addTo(map)
+          .bindPopup('경주 현곡 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.3060838,128.7239305]).addTo(map)
+          .bindPopup('김해 진영 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.5967984,128.2021113]).addTo(map)
+          .bindPopup('문경 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.820764,128.6277787]).addTo(map)
+          .bindPopup('영주 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.8781516,128.5984676]).addTo(map)
+          .bindPopup('대구 북구 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.8771196,128.6991519]).addTo(map)
+          .bindPopup('대구 반야월 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.6461416,129.3546525]).addTo(map)
+          .bindPopup('울산 매곡 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.41492302,129.28042369]).addTo(map)
+          .bindPopup('울산 온양 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.27222712,129.23763492]).addTo(map)
+          .bindPopup('부산 기장 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.180385,129.0725539]).addTo(map)
+          .bindPopup('부산 연제 하나님의 교회')
+          .openPopup();
+
+        L.marker([35.10920981,128.96089111]).addTo(map)
+          .bindPopup('부산 사하 하나님의 교회')
+          .openPopup();
+
+        L.marker([33.5012537,126.5308355]).addTo(map)
+          .bindPopup('제주 하나님의 교회')
+          .openPopup();
+
+        L.marker([33.2480409,126.3925133]).addTo(map)
+          .bindPopup('WMC제주연수원 하나님의 교회')
+          .openPopup();
+
+        L.marker([36.1182584,127.377462]).addTo(map)
+          .bindPopup('기독교복음선교회 JMS 본부')
+          .openPopup();
+
+        L.marker([33.505861,126.5410766]).addTo(map)
+          .bindPopup('천부교 본부')
+          .openPopup();
+
+        L.marker([37.5872765,127.0669333]).addTo(map)
+          .bindPopup('서울 동대문 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.47814,126.9600112]).addTo(map)
+          .bindPopup('서울 관악 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.49839182,126.86422632]).addTo(map)
+          .bindPopup('서울 고척 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.57636738,126.95675542]).addTo(map)
+          .bindPopup('서울 독립문 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.48525269,127.13173423]).addTo(map)
+          .bindPopup('서울 송파 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.52255838,126.88439574]).addTo(map)
+          .bindPopup('서울 영등포 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.55561212,126.81262418]).addTo(map)
+          .bindPopup('서울 공항 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.53943707,126.95770216]).addTo(map)
+          .bindPopup('서울 용산 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.65746149,127.04091149]).addTo(map)
+          .bindPopup('서울 도봉 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.50077344,127.0526708]).addTo(map)
+          .bindPopup('서울 강남 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.49946441,126.92125819]).addTo(map)
+          .bindPopup('서울 상도 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.68031437,127.05632841]).addTo(map)
+          .bindPopup('서울 노원 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.5346353,127.1375003,]).addTo(map)
+          .bindPopup('서울 강동 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.51904654,126.83630274]).addTo(map)
+          .bindPopup('서울 양천 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.61536166,127.01980203]).addTo(map)
+          .bindPopup('서울 미아 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.6320551,126.9286016]).addTo(map)
+          .bindPopup('서울 은평 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.5464177,126.9600841]).addTo(map)
+          .bindPopup('서울 공덕 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.5503194,126.9332376]).addTo(map)
+          .bindPopup('서울 마포 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.6170692,127.0638568]).addTo(map)
+          .bindPopup('서울 월계 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.3146002,127.1104393]).addTo(map)
+          .bindPopup('용인 제3기흥 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.26494592,127.06509572]).addTo(map)
+          .bindPopup('수원 영통 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.75733487,127.03588885]).addTo(map)
+          .bindPopup('의정부 녹양 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.47273109,126.80204478]).addTo(map)
+          .bindPopup('부천 소사 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.3335472,127.0930757]).addTo(map)
+          .bindPopup('용인 수지 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.2827395,127.0047521]).addTo(map)
+          .bindPopup('수원 팔달 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.36306157,126.94645412]).addTo(map)
+          .bindPopup('군포 금정 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.38248157,126.8011096]).addTo(map)
+          .bindPopup('시흥 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.71695319,127.17868549]).addTo(map)
+          .bindPopup('남양주 진접 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.44409594,127.13010815]).addTo(map)
+          .bindPopup('성남 수정  하나님의 교회')
+          .openPopup();
+
+        L.marker([37.73718159,126.75060522]).addTo(map)
+          .bindPopup('파주 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.62730885,126.7069597]).addTo(map)
+          .bindPopup('김포 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.66495002,126.80008796]).addTo(map)
+          .bindPopup('고양 동구 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.0137998,127.2359255]).addTo(map)
+          .bindPopup('안성 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.48860297,126.74825467]).addTo(map)
+          .bindPopup('부천 송내 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.49700867,126.7429548]).addTo(map)
+          .bindPopup('부천 상동 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.34625894,126.75086782]).addTo(map)
+          .bindPopup('시흥 정왕 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.21132348,127.04189089]).addTo(map)
+          .bindPopup('화성 병점 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.22083698,126.95492952]).addTo(map)
+          .bindPopup('화성 봉담 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.79927643,127.10067212]).addTo(map)
+          .bindPopup('양주 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.6382935,127.1362102]).addTo(map)
+          .bindPopup('구리 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.3037909,126.8092573]).addTo(map)
+          .bindPopup('안산 초지 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.2905487,127.46321275]).addTo(map)
+          .bindPopup('이천 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.38674138,127.24913077]).addTo(map)
+          .bindPopup('광주 오포 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.38375605,127.1084675]).addTo(map)
+          .bindPopup('새예루살렘 판교성전 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.29195725,127.64560264,]).addTo(map)
+          .bindPopup('여주 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.85196907,126.78680511]).addTo(map)
+          .bindPopup('파주 문산 하나님의 교회')
+          .openPopup();
+
+        L.marker([38.10060645,127.07820345]).addTo(map)
+          .bindPopup('연천 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.82663566,127.15054812]).addTo(map)
+          .bindPopup('포천 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.00030989,127.12258762]).addTo(map)
+          .bindPopup('평택 소사벌 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.44442728,127.1796923]).addTo(map)
+          .bindPopup('성남 상대원 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.75592022,127.11226581]).addTo(map)
+          .bindPopup('의정부 낙양 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.1924539,127.0893016]).addTo(map)
+          .bindPopup('화성 동탄 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.11551024,127.63035483,]).addTo(map)
+          .bindPopup('장호원 하나님의 교회')
+          .openPopup();
+
+        L.marker([37.7891702,128.8672586]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.5295391,129.10541]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([38.18929132,128.59133764]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.36397749,127.93961831]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.82782702,127.76463342]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.74143575,127.42279558]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.6358214,126.83253941]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.61643978,126.71574493]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.59738781,127.14482636]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([37.50199138,126.771082192]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+        L.marker([35.20396919,128.6933471]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();    
+
+            L.marker([34.85938908,128.42528982]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([36.12717819,128.3416343]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([36.56363225,128.73098288]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([34.89158978,128.61664769]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([36.06944036,129.37872421]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([35.30980345,129.00458203]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([35.21779064,128.59097899]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([35.15683648,128.66166293]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([35.85320285,129.22441281]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([35.19129146,128.80202097]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+            L.marker([35.83971497,128.56657496]).addTo(map)
+            .bindPopup('신천지 교회')
+            .openPopup();
+
+
+            
+
+        //제가 하나하나 좌표따온거랍니다...//
+
+
+
+          
+
+          
+    </script>
+
+    <br> <br> <br> <br> <br> <br>
+    <footer class="footer">
+      <div class="footer-line">
+        <img src="img/logo.png" alt="Footer Logo" class="footer-logo">
+      <div class="footer-text">2024 Digital Publishing</div>
+      </div>
+    </footer>
+
+  </body>   
+</html> 
